@@ -69,14 +69,19 @@ The notebooks cover the following model families and methods:
 - Ablation analysis
 
 Refer to the corresponding notebooks and the research article for the precise model configurations, federated learning setup, hyperparameters, and evaluation protocol.
-
 ## Dataset
 
-The study uses a surface water quality dataset collected from heterogeneous monitoring networks.
+The study uses the publicly available **A Comprehensive Surface Water Quality Monitoring Dataset (1940–2023)**, introduced by Karim et al. (2025).
 
-The dataset is not assumed to be distributed with this repository. Obtain it from the source identified in the associated research article and comply with its access, citation, and redistribution conditions.
+- **Dataset repository:** https://figshare.com/articles/dataset/A_Comprehensive_Surface_Water_Quality_Monitoring_Dataset_1940-2023_2_82Million_Record_Resource_for_Empirical_and_ML-Based_Research/27800394
+- **Dataset DOI:** https://doi.org/10.6084/m9.figshare.27800394.v2
+- **License:** Creative Commons Attribution 4.0 International (CC BY 4.0)
 
-Before running the notebooks, update any dataset paths to match your local environment.
+The dataset contains approximately 2.82 million observations from five countries: the United States, Canada, England, Ireland, and China, covering the period 1940–2023.
+
+The dataset is not included in this repository. Download it from the official Figshare repository and comply with its attribution and license requirements.
+
+Before running the notebooks, update the dataset paths to match your local environment.
 
 ## Requirements
 
@@ -121,12 +126,17 @@ If you use this code, please cite the associated research article.
 The bibliographic information should be completed once the article's publication details are available.
 
 ```bibtex
-@article{mezzoudj_federated_water_quality,
-  title   = {An Explainable Federated Learning Framework for Surface Water Quality Forecasting Across Heterogeneous Monitoring Networks},
-  author  = {Add the verified author list},
-  journal = {Add the journal name},
-  year    = {Add the publication year},
-  doi     = {Add the DOI when available}
+@article{mezzoudj2026explainable,
+  title   = {{An Explainable Federated Learning Framework for Surface Water Quality Forecasting Across Heterogeneous Monitoring Networks}},
+  author  = {MEZZOUDJ, Saliha and
+             HADDOUDA, Sara and
+             CHEBLAL, Hibatallah and
+             SAADNA, Yassmina and
+             Zahary, Ammar Thabit and
+             KHELIFA, Meriem},
+  journal = {Scientific Reports},
+  year    = {2026},
+  doi     = {To be assigned}
 }
 ```
 
