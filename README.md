@@ -12,14 +12,16 @@ The repository is intended to support transparency and inspection of the experim
 
 ## Research Objectives
 
-The study aims to:
+The main objectives of this study are to:
 
-- Evaluate federated learning approaches for surface water quality forecasting.
-- Compare GRU, LSTM, and Transformer-based models.
-- Establish classical machine learning baselines.
-- Evaluate model performance using the metrics defined in the study.
-- Investigate model behavior and feature contributions using SHAP.
-- Examine overfitting and the contribution of framework components through ablation experiments.
+- Develop an explainable framework for next-month surface water quality forecasting using heterogeneous multi-country monitoring data.
+- Compare three learning strategies: local, centralized, and federated learning under consistent preprocessing, training, and chronological evaluation protocols.
+- Benchmark classical machine learning models, including Logistic Regression, Random Forest, XGBoost, and CatBoost.
+- Evaluate deep learning architectures, including Gated Recurrent Unit (GRU), Long Short-Term Memory (LSTM), and Transformer, across different learning strategies.
+- Assess predictive performance using the evaluation metrics defined in the study, with particular emphasis on Macro-F1.
+- Investigate model interpretability through SHAP-based global and temporal analyses to identify influential physicochemical variables and historical observations.
+- Conduct ablation experiments to examine the effects of learning strategy, neural architecture, data heterogeneity, class imbalance, and repeated-value patterns on forecasting performance.
+- Analyze the influence of data characteristics, model architecture, and learning strategy on forecasting performance across heterogeneous monitoring networks.
 
 ## Repository Contents
 
