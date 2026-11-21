@@ -1,135 +1,180 @@
-# Explainable Federated Learning for Surface Water Quality Forecasting Across Heterogeneous Monitoring Networks
+Explainable Federated Learning for Surface Water Quality Forecasting Across Heterogeneous Monitoring Networks
 
-## Overview
+Overview
 
-This repository contains the experimental notebooks and supporting materials developed for the research study:
+This repository contains the source code, Jupyter notebooks, experimental outputs, and supporting materials developed for the research study:
 
-**“An Explainable Federated Learning Framework for Surface Water Quality Forecasting Across Heterogeneous Monitoring Networks.”**
+"An Explainable Federated Learning Framework for Surface Water Quality Forecasting Across Heterogeneous Monitoring Networks."
 
-The study investigates federated learning for surface water quality forecasting across heterogeneous monitoring networks. It examines recurrent and Transformer-based models, compares them with classical machine learning baselines, and uses explainable artificial intelligence techniques to analyze model behavior.
+The study investigates an explainable federated learning framework for next-month surface water quality forecasting across heterogeneous monitoring networks. It provides a comparative evaluation of local, centralized, and federated learning strategies using classical machine learning and deep learning models.
 
-The repository is intended to support transparency and inspection of the experimental workflow. Please consult the notebooks and the associated article for the exact implementation details and reported results.
+The repository includes the complete experimental workflow, covering exploratory data analysis, preprocessing, model training, robustness analysis, explainable AI, ablation experiments, and statistical evaluation.
 
-## Research Objectives
+Research Objectives
 
 The main objectives of this study are to:
 
-- Develop an explainable framework for next-month surface water quality forecasting using heterogeneous multi-country monitoring data.
-- Compare three learning strategies: local, centralized, and federated learning under consistent preprocessing, training, and chronological evaluation protocols.
-- Benchmark classical machine learning models, including Logistic Regression, Random Forest, XGBoost, and CatBoost.
-- Evaluate deep learning architectures, including Gated Recurrent Unit (GRU), Long Short-Term Memory (LSTM), and Transformer, across different learning strategies.
-- Assess predictive performance using the evaluation metrics defined in the study, with particular emphasis on Macro-F1.
-- Investigate model interpretability through SHAP-based global and temporal analyses to identify influential physicochemical variables and historical observations.
-- Conduct ablation experiments to examine the effects of learning strategy, neural architecture, data heterogeneity, class imbalance, and repeated-value patterns on forecasting performance.
-- Analyze the influence of data characteristics, model architecture, and learning strategy on forecasting performance across heterogeneous monitoring networks.
+- Develop an explainable framework for next-month surface water quality forecasting.
+- Compare local, centralized, and federated learning strategies under heterogeneous non-IID monitoring conditions.
+- Evaluate classical machine learning models, including Logistic Regression, Random Forest, XGBoost, and CatBoost.
+- Investigate deep learning architectures, including GRU, LSTM, and Transformer.
+- Analyze the effects of data heterogeneity and class imbalance on forecasting performance.
+- Apply SHAP-based explainability to identify influential physicochemical parameters and temporal observations.
+- Conduct ablation experiments and robustness analyses.
+- Evaluate model performance using appropriate classification metrics, confidence intervals, and statistical comparisons.
+- Assess federated communication costs and the trade-offs between predictive performance and collaborative learning.
 
-## Repository Contents
+Repository Structure
 
-The following Jupyter notebooks are included:
+The repository is organized into Jupyter notebooks and supplementary ZIP archives.
 
-| File | Purpose |
-|---|---|
-| `01-eda.ipynb` | Exploratory data analysis |
-| `02-preprocess.ipynb` | Data preprocessing |
-| `03-gru-baselines.ipynb` | GRU baseline experiments |
-| `04-lstm-baselines.ipynb` | LSTM baseline experiments |
-| `05-transformer-baselines.ipynb` | Transformer baseline experiments |
-| `06-confusion-matrices.ipynb` | Confusion-matrix analysis |
-| `07-overfitting-evidence.ipynb` | Overfitting analysis |
-| `08-classical-ml-baselines.ipynb` | Classical machine learning baselines |
-| `09-final-comparison.ipynb` | Final model comparison |
-| `10-shap-xai.ipynb` | SHAP-based explainability analysis |
-| `11-ablation-study.ipynb` | Ablation study |
+1. Jupyter Notebooks – Source Code
 
-Supplementary ZIP archives containing experiment outputs may also be provided in the repository.
+The ".ipynb" files contain the executable Python code for the experiments.
 
-## Experimental Workflow
+Notebook| Description
+"01-eda.ipynb"| Exploratory data analysis
+"02-preprocess.ipynb"| Initial data preprocessing
+"02-preprocess2.ipynb"| Additional preprocessing and sequence preparation
+"03-gru-baselines.ipynb"| GRU baseline experiments
+"04-lstm-baselines.ipynb"| LSTM baseline experiments
+"05-transformer-baselines.ipynb"| Transformer baseline experiments
+"06-confusion-matrices.ipynb"| Confusion matrices and classification performance analysis
+"07-overfitting-evidence.ipynb"| Overfitting and generalization analysis
+"08-classical-ml-baselines.ipynb"| Classical machine learning baseline experiments
+"08b-xgboost-seed-robustness.ipynb"| XGBoost multi-seed robustness experiments
+"09-final-comparison.ipynb"| Final comparison of the evaluated models
+"10-shap-xai.ipynb"| SHAP-based explainability analysis
+"11-ablation-study.ipynb"| Ablation experiments
+"12-bootstrap-robustness.ipynb"| Bootstrap-based robustness and confidence interval analysis
 
-The notebooks are organized around the following workflow:
+2. ZIP Archives – Experimental Outputs
 
-1. Exploratory analysis of the dataset.
-2. Data preprocessing and preparation.
+The ".zip" files contain supplementary experimental outputs generated by the corresponding notebooks.
+
+They are provided separately to facilitate access to the experimental results without requiring users to execute every notebook.
+
+ZIP Archive| Contents
+"eda_outputs_archive.zip"| Exploratory data analysis outputs
+"02-preprocess_outputs.zip"| Preprocessing outputs
+"preprocess_outputs.zip"| Additional preprocessing outputs
+"03-gru_baselines.zip"| GRU experimental outputs
+"04-lstm_baselines.zip"| LSTM experimental outputs
+"05-transformer_baselines.zip"| Transformer experimental outputs
+"06-confusion_matrices.zip"| Confusion matrices and related outputs
+"07-overfitting_evidence.zip"| Overfitting analysis outputs
+"09-final_comparison.zip"| Final model comparison outputs
+"10-shap_analysis.zip"| SHAP explainability outputs
+"11-ablation_study.zip"| Ablation study outputs
+"N08b_xgboost_seed_robustness.zip"| XGBoost multi-seed robustness outputs
+"N12_bootstrap_outputs.zip"| Bootstrap robustness and statistical analysis outputs
+
+Important: The ZIP archives contain experimental outputs and supporting result files, not alternative versions of the Jupyter notebooks. The notebooks are the primary source-code files.
+
+Experimental Workflow
+
+The experimental workflow is organized into the following stages:
+
+1. Exploratory data analysis.
+2. Data preprocessing and temporal sequence construction.
 3. GRU, LSTM, and Transformer baseline experiments.
 4. Classical machine learning baseline experiments.
-5. Confusion-matrix and overfitting analyses.
-6. Explainability analysis using SHAP.
-7. Ablation experiments.
-8. Final comparison of the evaluated models.
+5. Confusion-matrix analysis and overfitting assessment.
+6. XGBoost multi-seed robustness evaluation.
+7. Final model comparison.
+8. SHAP-based explainability analysis.
+9. Ablation experiments.
+10. Bootstrap-based statistical robustness analysis.
 
-Run the notebooks in numerical order where later experiments depend on files or outputs produced by earlier notebooks.
+The notebook numbering reflects the main experimental workflow. Some experiments use intermediate files generated during earlier stages.
 
-## Models and Methods
+Models and Methods
 
-The notebooks cover the following model families and methods:
+The repository covers the following methods:
+
+Classical machine learning
+
+- Logistic Regression
+- Random Forest
+- XGBoost
+- CatBoost
+
+Deep learning
 
 - Gated Recurrent Unit (GRU)
 - Long Short-Term Memory (LSTM)
-- Transformer-based models
-- Classical machine learning baselines
-- Federated learning experiments
-- SHAP-based explainable AI
+- Transformer
+
+Federated learning
+
+- Federated Averaging (FedAvg)
+- Federated Proximal (FedProx)
+
+Explainability and statistical analysis
+
+- SHAP-based global and temporal explanations
+- Confusion-matrix analysis
+- Multi-seed robustness experiments
+- Bootstrap confidence intervals
 - Ablation analysis
+- Federated communication-cost evaluation
 
-Refer to the corresponding notebooks and the research article for the precise model configurations, federated learning setup, hyperparameters, and evaluation protocol.
-## Dataset
+Dataset
 
-The study uses the publicly available **A Comprehensive Surface Water Quality Monitoring Dataset (1940–2023)**, introduced by Karim et al. (2025).
+The study uses the publicly available A Comprehensive Surface Water Quality Monitoring Dataset (1940–2023) introduced by Karim et al. (2025).
 
-- **Dataset repository:** https://figshare.com/articles/dataset/A_Comprehensive_Surface_Water_Quality_Monitoring_Dataset_1940-2023_2_82Million_Record_Resource_for_Empirical_and_ML-Based_Research/27800394
-- **Dataset DOI:** https://doi.org/10.6084/m9.figshare.27800394.v2
-- **License:** Creative Commons Attribution 4.0 International (CC BY 4.0)
+- Dataset: https://figshare.com/articles/dataset/27800394
+- DOI: https://doi.org/10.6084/m9.figshare.27800394.v2
+- License: Creative Commons Attribution 4.0 International (CC BY 4.0).
 
-The dataset contains approximately 2.82 million observations from five countries: the United States, Canada, England, Ireland, and China, covering the period 1940–2023.
+The original dataset contains approximately 2.82 million observations collected between 1940 and 2023 across five countries: the United States, Canada, England, Ireland, and China.
 
-The dataset is not included in this repository. Download it from the official Figshare repository and comply with its attribution and license requirements.
+The main experimental evaluation uses three monitoring networks: England, Ireland, and the United States. Canada and China were excluded because they did not satisfy the temporal sequence requirements of the experimental framework.
 
-Before running the notebooks, update the dataset paths to match your local environment.
+The dataset is not included in this repository. Users should download it from the official Figshare source and comply with its attribution requirements.
 
-## Requirements
+Requirements
 
-The experiments use Python and Jupyter notebooks. Install the package dependencies required by the notebooks before execution.
+The experiments are implemented using Python and Jupyter notebooks.
 
-A `requirements.txt` file should be provided with the exact package names and versions used for the final experiments. Do not assume that a generic list of libraries is a substitute for the verified environment.
+Users should install the Python libraries required by the notebooks before execution. The exact software environment and package versions should be checked against the experimental implementation.
 
-## Running the Notebooks
+How to Use This Repository
 
-1. Clone or download this repository.
-2. Create and activate a Python environment.
-3. Install the dependencies listed in `requirements.txt` (when provided).
-4. Obtain the dataset from its authorized source.
-5. Configure the dataset paths in the notebooks or configuration files.
-6. Launch Jupyter Notebook or JupyterLab.
-7. Execute the notebooks in numerical order, checking each notebook's input requirements.
+1. Clone or download the GitHub repository.
+2. Download the original dataset from the Figshare repository.
+3. Install the required Python packages.
+4. Configure the dataset paths according to your local environment.
+5. Open the Jupyter notebooks using Jupyter Notebook, JupyterLab, or Google Colab.
+6. Execute the notebooks according to the experimental workflow.
+7. Alternatively, download and extract the corresponding ".zip" archives to inspect the saved experimental outputs.
 
-Some notebooks may rely on intermediate files generated by earlier steps. Check the notebook instructions before running an experiment independently.
+Note: The ZIP archives are intended for inspecting previously generated outputs. Users wishing to reproduce the experiments should execute the corresponding Jupyter notebooks.
 
-## Results
+Results and Reproducibility
 
-The notebooks contain the procedures and outputs for the experiments listed above. For the definitive numerical results, experimental settings, and interpretation, refer to the corresponding tables, figures, and discussion in the research article.
+The repository provides the computational materials supporting the experiments reported in the associated research article.
 
-Ensure that the code and outputs in this repository match the version of the experiments reported in the article before citing this repository as the source of the published results.
+The saved outputs facilitate inspection of the experimental results, while the notebooks provide the implementation details required to examine and reproduce the computational workflow.
 
-## Reproducibility Notes
+For the definitive numerical results, experimental configurations, evaluation metrics, and scientific interpretation, please consult the corresponding research article.
 
-For reproducible execution:
+Code Availability
 
-- Use the dataset version and preprocessing procedure described in the article.
-- Preserve the experimental data splits and random seeds, where specified.
-- Use the documented model configurations and hyperparameters.
-- Record the Python and library versions.
-- Follow the notebook execution order and retain required intermediate outputs.
+The source code, experimental notebooks, and supporting outputs are publicly available in this GitHub repository:
 
-Any details not explicitly documented in the notebooks or configuration files should be checked against the research article.
+GitHub Repository: https://github.com/smezzoudj/explainable-federated-learning-water-quality-1
 
-## Citation
+The repository supports transparency, reproducibility, and further research on explainable federated learning for environmental forecasting.
 
-If you use this code, please cite the associated research article.
+Citation
 
-The bibliographic information should be completed once the article's publication details are available.
+If you use this repository, please cite the associated research article:
 
-```bibtex
 @article{mezzoudj2026explainable,
-  title   = {{An Explainable Federated Learning Framework for Surface Water Quality Forecasting Across Heterogeneous Monitoring Networks}},
+  title   = {An Explainable Federated Learning Framework for
+             Surface Water Quality Forecasting Across
+             Heterogeneous Monitoring Networks},
   author  = {MEZZOUDJ, Saliha and
              HADDOUDA, Sara and
              CHEBLAL, Hibatallah and
@@ -137,19 +182,17 @@ The bibliographic information should be completed once the article's publication
              Zahary, Ammar Thabit and
              KHELIFA, Meriem},
   journal = {Scientific Reports},
-  year    = {2026},
-  doi     = {To be assigned}
+  year    = {2026}
 }
-```
 
-## Code Availability
+The final bibliographic information and DOI should be updated following publication.
 
-The source code and experimental notebooks are made available in this repository for inspection of the computational workflow associated with the study. The repository contents and instructions should be checked against the final published version of the article.
+License
 
-## License
+The dataset is distributed under its original CC BY 4.0 license. This does not automatically determine the license of the source code in this repository.
 
-Add a `LICENSE` file specifying the terms under which this code may be used, modified, and redistributed. Do not select a license unless you have the right to grant those permissions and any institutional or co-author requirements have been checked.
+A separate code license should be added once the authors have agreed on the applicable redistribution and reuse terms.
 
-## Contact
+Contact
 
-For questions about the implementation or research, use the corresponding author's contact information provided in the associated article.
+For questions concerning the implementation, experimental workflow, or research findings, please refer to the corresponding author information in the research article.
